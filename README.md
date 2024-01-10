@@ -1,3 +1,3 @@
 # 30-DAY-CHALLENGE
-#HackerRank
+# HackerRank
 Solutions of hackerrank challenge named 30 days of coding
