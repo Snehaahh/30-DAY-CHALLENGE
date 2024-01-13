@@ -11,24 +11,12 @@ class Node{
 class Solution{
 
 	public static int getHeight(Node root){
-      if(root.left ==null && root.right==null)
+      if(root==null)
         return 0;
-      else if(root.left == null || root.right==null) {
-          if(root.left.left==null && root.left.right==null)
-            return 1;
-          else if(root.right.left==null || root.right.right==null)
-            return 1;
-      } 
-      else if(root.left == null && root.right==null) {
-          if(root.left.left==null && root.left.right==null)
-            return 1;
-          else if(root.right.left==null || root.right.right==null)
-            return 1;
-      }
-     // else {
-          
-     // }
-     return 1;
+      else 
+      return (1+(Math.max(getHeight(root.left),getHeight(root.right))));
+      
+    
     }
      
 	public static Node insert(Node root,int data){
