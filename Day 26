@@ -10,9 +10,9 @@ public class Solution {
            return;
        } 
        else {
-           if(D1==D2 && M1==M2 && Y1==Y2)
+           if(Y1<Y2)
                 System.out.println(0);
-            else if(D1<D2 && M1<M2 && Y1<Y2)
+           else if(D1<=D2 && M1<=M2 && Y1==Y2)
                 System.out.println(0);
             else {
                 if(D1>D2 && M1==M2 && Y1==Y2)
