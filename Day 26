@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.Scanner;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void calcFine(int D1,int M1,int Y1,int D2,int M2,int Y2) {
+       if(D1<1 || D1>31 || M1<1 || M1>12 || Y1<1 || Y1>3000 ||D2<1 || D2>31 || M2<1 || M2>12 || Y2<1 || Y2>3000) {
+           return;
+       } 
+       else {
+           if(D1==D2 && M1==M2 && Y1==Y2)
+                System.out.println(0);
+            else if(D1<D2 && M1<M2 && Y1<Y2)
+                System.out.println(0);
+            else {
+                if(D1>D2 && M1==M2 && Y1==Y2)
+                    System.out.println(15*(D1-D2));
+                else if(M1>M2 && Y1==Y2)
+                    System.out.println(500*(M1-M2));
+                else if(Y1>Y2)
+                    System.out.println(10000);
+            }
+                
+       }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int D1=sc.nextInt();
+        int M1=sc.nextInt();
+        int Y1=sc.nextInt();
+        int D2=sc.nextInt();
+        int M2=sc.nextInt();
+        int Y2=sc.nextInt();
+        calcFine(D1,M1,Y1,D2,M2,Y2);
+        
+    }
+}
