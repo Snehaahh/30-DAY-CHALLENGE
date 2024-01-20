@@ -5,25 +5,55 @@ import java.text.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
+import java.lang.Byte;
 
-class Result {
-
-    /*
-     * Complete the 'bitwiseAnd' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts following parameters:
-     *  1. INTEGER N
-     *  2. INTEGER K
-     */
-
-    public static int bitwiseAnd(int N, int K) {
-    // Write your code here
-
+class Binary {
+    public static String BinaryString(int num){
+        return Integer.toBinaryString(num);
+        
     }
-
 }
+class Result {
+    public static int bitwiseAnd(int N, int K) {
+        N=N*(N-1)/2;
+        int[] tmp=new int[10];
+        int A,B,k=0;
+        try {
+       for(int i=1;i<=N;i++) {
+          for(int j=i+1;j<=N;j++) {
+               A=i;
+               B=j;
+                 
+                String A1=Binary.BinaryString(A);
+                String B1=Binary.BinaryString(B);
+                int a=Integer.parseInt(A1,2);
+                int b=Integer.parseInt(B1,2);
+                        tmp[k]=a & b;
+                        System.out.println("tmp inside");
+                        System.out.println(tmp);
+                    k++;
+       }
+    }
+     System.out.println("tmp outside");
+    for(int i=0;i<(tmp.length);i++) 
+        System.out.print(tmp[i]+"  ");
+   /* int max=tmp[0];
+    for(int i=1;i<(tmp.length);i++) {
+        if(tmp[i] > max && tmp[i] <K) {
+            max=tmp[i];
+            
+        }
+    }
+    
+    */     
 
+        }
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+ return 0;     
+}
+}
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -40,7 +70,7 @@ public class Solution {
 
             int res = Result.bitwiseAnd(count, lim);
 
-            bufferedWriter.write(String.valueOf(res));
+           bufferedWriter.write(String.valueOf(res));
             bufferedWriter.newLine();
         }
 
