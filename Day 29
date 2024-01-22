@@ -10,7 +10,6 @@ import java.lang.Byte;
 class Binary {
     public static String BinaryString(int num){
         return Integer.toBinaryString(num);
-        
     }
 }
 class Result {
